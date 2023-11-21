@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Описание API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Документация API</h1>
+
+    <section>
+        <h2>Ресурс 1</h2>
+        <p>Описание ресурса 1 и его параметров.</p>
+        <ul>
+            <li><strong>Метод:</strong> GET</li>
+            <li><strong>Endpoint:</strong> /P_API_GROUP_JSON</li>
+            </li>
+            <li><strong>Пример ответа:</strong>
+                            <pre>    
+{
+   "university":{
+      "short_name":"ХНУРЕ",
+      "full_name":"ХНУРЕ",
+      "faculties":[
+         {
+            "id":56,
+            "short_name":"Факультет інформаційно - аналітичних технологій та менеджменту",
+            "full_name":"ITM",
+            "directions":[
+               {
+                  "id":81,
+                  "short_name":"Економіка, освітня програма 'Економічна кібернетика'",
+                  "full_name":"ЕЕК",
+                  "specialities":[
+                     {
+                        "id":7,
+                        "short_name":"УФЕБ",
+                        "full_name":"УФЕБ",
+                        "groups":[
+                           {
+                              "id":10284291,
+                              "name":"УФЕБм-22-1"
+                           },
+                           {
+                              "id":6949796,
+                              "name":"ЕЕК-18-1"
+                           }
+                        ]
+                     }
+                  ],
+                  "groups":[
+                     {
+                        "id":6949796,
+                        "name":"ЕЕК-18-1"
+                     },
+                     {
+                        "id":7310687,
+                        "name":"ЕЕКи-18-1"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Ресурс 2</h2>
+        <p>Описание ресурса 2 и его параметров.</p>
+        <ul>
+            <li><strong>Метод:</strong> GET</li>
+            <li><strong>Endpoint:</strong> /P_API_EVENTS_GROUP_JSON</li>
+            <li><strong>Параметры запроса:</strong>
+                <ul>
+                    <li>id: Тип данных - число, Обязательный</li>
+                    <li>time_from: Тип данных - int, Не обязательный</li>
+                    <li>time_to: Тип данных - int, Не обязательный</li>
+                </ul>
+            </li>
+            <li><strong>Пример ответа:</strong>
+                <pre>
+{
+   "time-zone":"Europe/Kiev",
+   "events":[
+      {
+         "subject_id":7706207,
+         "start_time":1700471700,
+         "end_time":1700477400,
+         "type":10,
+         "number_pair":3,
+         "auditory":"ФІЛІЯ",
+         "teachers":[
+            1075
+         ],
+         "groups":[
+            10309039
+         ]
+      },
+      {
+         "subject_id":7706207,
+         "start_time":1700478600,
+         "end_time":1700484300,
+         "type":0,
+         "number_pair":4,
+         "auditory":"ФІЛІЯ",
+         "teachers":[
+            1075
+         ],
+         "groups":[
+            10309039
+         ]
+      },
+      {
+         "subject_id":4103910,
+         "start_time":1700484900,
+         "end_time":1700490600,
+         "type":10,
+         "number_pair":5,
+         "auditory":"205і",
+         "teachers":[
+            1230
+         ],
+         "groups":[
+            10309039,
+            10307432
+         ]
+      },
+      {
+         "subject_id":10951257,
+         "start_time":1700491200,
+         "end_time":1700496900,
+         "type":10,
+         "number_pair":6,
+         "auditory":"309",
+         "teachers":[
+            6069939
+         ],
+         "groups":[
+            10309039,
+            10307432
+         ]
+      }
+   ],
+   "groups":[
+      {
+         "id":10307432,
+         "name":"ІСТ-22-1"
+      },
+      {
+         "id":10309039,
+         "name":"ІТІР-22-1"
+      }
+   ],
+   "teachers":[
+      {
+         "id":1230,
+         "full_name":"Горячковська Ганна Миколаївна",
+         "short_name":"Горячковська Г. М."
+      },
+      {
+         "id":1075,
+         "full_name":"Кузьомін Олександр Якович",
+         "short_name":"Кузьомін О. Я."
+      },
+      {
+         "id":6069939,
+         "full_name":"Бітченко Олександр Миколайович",
+         "short_name":"Бітченко О. М."
+      }
+   ],
+   "subjects":[
+      {
+         "id":4103910,
+         "brief":"Філ",
+         "title":"Філософія",
+         "hours":[
+            {
+               "type":10,
+               "val":16,
+               "teachers":[
+                  1230
+               ]
+            }
+         ]
+      },
+      {
+         "id":7706207,
+         "brief":"ОПНМ",
+         "title":"Основи побудови нейронних мереж",
+         "hours":[
+            {
+               "type":10,
+               "val":6,
+               "teachers":[
+                  1075
+               ]
+            },
+            {
+               "type":0,
+               "val":18,
+               "teachers":[
+                  1075
+               ]
+            }
+         ]
+      },
+      {
+         "id":10951257,
+         "brief":"ЕтСІС",
+         "title":"Електроніка та схемотехніка інформаційних систем",
+         "hours":[
+            {
+               "type":10,
+               "val":16,
+               "teachers":[
+                  6069939
+               ]
+            }
+         ]
+      }
+   ],
+   "types":[
+      {
+         "id":0,
+         "short_name":"Лк",
+         "full_name":"Лекція",
+         "id_base":0,
+         "type":"lecture"
+      },
+      {
+         "id":1,
+         "short_name":"У.Лк (1)",
+         "full_name":"Уст. Лекція (1)",
+         "id_base":0,
+         "type":"lecture"
+      },
+      {
+         "id":2,
+         "short_name":"У.Лк",
+         "full_name":"Уст. Лекція",
+         "id_base":0,
+         "type":"lecture"
+      },
+      {
+         "id":10,
+         "short_name":"Пз",
+         "full_name":"Практичне заняття",
+         "id_base":10,
+         "type":"practice"
+      },
+      {
+         "id":12,
+         "short_name":"У.Пз",
+         "full_name":"Уст. Практичне заняття",
+         "id_base":10,
+         "type":"practice"
+      },
+      {
+         "id":20,
+         "short_name":"Лб",
+         "full_name":"Лабораторна робота",
+         "id_base":20,
+         "type":"laboratory"
+      },
+      {
+         "id":21,
+         "short_name":"Лб",
+         "full_name":"Лабораторна ІОЦ",
+         "id_base":20,
+         "type":"laboratory"
+      },
+      {
+         "id":22,
+         "short_name":"Лб",
+         "full_name":"Лабораторна кафедри",
+         "id_base":20,
+         "type":"laboratory"
+      },
+      {
+         "id":23,
+         "short_name":"У.Лб",
+         "full_name":"Уст. Лабораторна ІОЦ",
+         "id_base":20,
+         "type":"laboratory"
+      },
+      {
+         "id":24,
+         "short_name":"У.Лб",
+         "full_name":"Уст. Лабораторна кафедри",
+         "id_base":20,
+         "type":"laboratory"
+      },
+      {
+         "id":30,
+         "short_name":"Конс",
+         "full_name":"Консультація",
+         "id_base":30,
+         "type":"consultation"
+      },
+      {
+         "id":40,
+         "short_name":"Зал",
+         "full_name":"Залік",
+         "id_base":40,
+         "type":"test"
+      },
+      {
+         "id":41,
+         "short_name":"дзал",
+         "full_name":"ЗалікД",
+         "id_base":40,
+         "type":"test"
+      },
+      {
+         "id":50,
+         "short_name":"Екз",
+         "full_name":"Екзамен",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":51,
+         "short_name":"ЕкзП",
+         "full_name":"ЕкзаменП",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":52,
+         "short_name":"ЕкзУ",
+         "full_name":"ЕкзаменУ",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":53,
+         "short_name":"ІспКомб",
+         "full_name":"Іспит комбінований",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":54,
+         "short_name":"ІспТест",
+         "full_name":"Іспит тестовий",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":55,
+         "short_name":"мод",
+         "full_name":"Модуль",
+         "id_base":50,
+         "type":"exam"
+      },
+      {
+         "id":60,
+         "short_name":"КП/КР",
+         "full_name":"КП/КР",
+         "id_base":60,
+         "type":"course_work"
+      }
+   ]
+}
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Добавьте другие разделы по мере необходимости -->
+
+</body>
+</html>
